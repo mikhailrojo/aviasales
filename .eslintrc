@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "func-names": [
+      "error",
+      "never"
+    ],
+    "import/prefer-default-export": "off",
+    "indent": [2, "tab", {"SwitchCase": 1}],
+    "no-tabs": 0,
+    "comma-dangle": ["error", "never"],
+    "object-curly-spacing": ["error", "never"],
+    "import/extensions": "off",
+    "import/no-unresolved": "off"
+  }
+}
