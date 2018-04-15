@@ -6,11 +6,11 @@ import {RightOfferPart} from './RightOfferPart';
 
 const StyledContainer = styled.div`
 	background: #fff;
-	border-radius: 10px;
+	border-radius: 5px;
 	box-shadow: 0px 0px 10px 0px rgba(160,205,237,0.2);
 	display: flex;
 	height: 161px;
-	margin-bottom: 20px;
+	margin: 0 0 20px 20px;
 	width: 566px;
 `;
 

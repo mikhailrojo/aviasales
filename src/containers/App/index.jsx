@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {injectGlobal} from 'styled-components';
+import styled from 'styled-components';
 
 import {Offer} from '../../components';
+import {Filters} from '../../components'
 
 injectGlobal`
 	body {
@@ -46,6 +48,11 @@ const offerDetails = [
 	}
 ];
 
+const Body = styled.div`
+	display: flex;
+	
+`;
+
 /**
  * Основной компонент приложения
  */
@@ -53,7 +60,12 @@ export class App extends Component {
 	render() {
 		return (
 			<div>
-				{offerDetails.map((detail, index) => <Offer {...detail} key={index} />)}
+				<Body>
+				<Filters />
+				<div>
+					{offerDetails.map((detail, index) => <Offer {...detail} key={index}/>)}
+				</div>
+				</Body>
 			</div>
 		);
 	}
