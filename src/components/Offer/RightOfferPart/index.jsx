@@ -116,11 +116,22 @@ class RightOfferPart extends React.PureComponent {
 	}
 
 	getPluralOfStops(numberOfStops) {
-		return (numberOfStops < 2)
-			? 'пересадка'
-			: (numberOfStops < 5)
-				? 'пересадки'
-				: 'пересадок';
+		switch(numberOfStops){
+			case 0: {
+				return 'прямой рейс';
+			}
+			case 1: {
+				return '1 пересадка';
+			}
+			case 2:
+			case 3:
+			case 4: {
+				return `${numberOfStops} пересадки`;
+			}
+			default: {
+				return `${numberOfStops} пересадок`;
+			}
+		}
 	}
 
 
@@ -145,7 +156,7 @@ class RightOfferPart extends React.PureComponent {
 					<Date>{this.getFormattedDate(departure_date)}</Date>
 				</div>
 				<ThroughSection>
-					{`${stops} ${this.getPluralOfStops(stops)}`}
+					{this.getPluralOfStops(stops)}
 					<PathAndPlane>
 						<Path/>
 						<Plane/>

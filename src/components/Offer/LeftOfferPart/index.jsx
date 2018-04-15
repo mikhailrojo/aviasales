@@ -1,15 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import TK from './assets/TK.jpeg';
 
-/**
- * Словарь с аббриватурами перевозчиков
- *
- * @type {{TK}}
- */
-const logoDictionary = {
-	TK
-};
+import iconUrls from './assets/';
 
 /**
  * Стилированная левая часть предложения о перевозке
@@ -63,19 +55,21 @@ const Logo = styled.div`
  * @returns {JSX}
  * @constructor
  */
-const LeftOfferPart = ({price, carrier}) => (
-	<StyledLeftOfferPart >
-		<Logo url={logoDictionary[carrier]} />
-		<BuyButton>
-			<div>
-				Купить
-			</div>
-			<div>
-				{`за ${price} \u20BD`}
-			</div>
-		</BuyButton>
-	</StyledLeftOfferPart>
-);
+const LeftOfferPart = ({price, carrier}) => {
+	return (
+		<StyledLeftOfferPart >
+			<Logo url={iconUrls[carrier]} />
+			<BuyButton>
+				<div>
+					Купить
+				</div>
+				<div>
+					{`за ${price} \u20BD`}
+				</div>
+			</BuyButton>
+		</StyledLeftOfferPart>
+	);
+}
 
 
 export {LeftOfferPart};
