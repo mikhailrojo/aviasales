@@ -1,0 +1,4 @@
+export default {
+	SHOW_ERROR: 'SHOW_ERROR',
+	SHOW_OFFERS: 'SHOW_OFFERS'
+}

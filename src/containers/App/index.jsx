@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {injectGlobal, default as styled} from 'styled-components';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
-import {Offer, Filters, OfferList} from '../../components';
-
+import {Filters, OfferList} from '../../components';
+import * as actions from '../../actions'
 
 injectGlobal`
 	body {
@@ -20,47 +22,33 @@ const Body = styled.div`
 	display: flex;
 `;
 
+const mapStateToProps = (state) => state;
+const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
+
 /**
  * Основной компонент приложения
  */
-export class App extends Component {
+class AppContainer extends Component {
 	/**
 	 * Адрес получения предложений по билетам
 	 * @type {string}
 	 */
 	apiUrl = '/api/getOffers';
 
-	state = {
-		offers: null
-	};
-
 	componentDidMount() {
-		this.callApi()
-			.then(offers => this.setState({offers}))
-			.catch(error => console.log(error));
+		this.props.fetchOffers(this.apiUrl);
 	}
 
-	callApi = async () => {
-		const response = await fetch(this.apiUrl);
-		const body = await response.json();
-
-		if (response.status !== 200) {
-			// @todo показывать ошибку
-			throw new Error('not uploaded');
-		}
-		return body;
-	};
-
 	render() {
-		const {offers} = this.state;
+		const {offers} = this.props;
 
 		return (
-			<div>
-				<Body>
-					<Filters />
-					<OfferList offers={offers} />
-				</Body>
-			</div>
+			<Body>
+				<Filters />
+				<OfferList offers={offers}/>
+			</Body>
 		);
 	}
 }
+
+export const App = connect(mapStateToProps, mapDispatchToProps)(AppContainer);
