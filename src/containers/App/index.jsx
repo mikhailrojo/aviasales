@@ -22,7 +22,7 @@ const Body = styled.div`
 	display: flex;
 `;
 
-const mapStateToProps = (state) => state;
+const mapStateToProps = ({visibleOffers, chosenStops}) => ({offers: visibleOffers, chosenStops});
 const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
 
 /**
@@ -40,12 +40,13 @@ class AppContainer extends Component {
 	}
 
 	render() {
-		const {offers} = this.props;
+		console.log(this.props);
+		const {offers, filterByStops, chosenStops} = this.props;
 
 		return (
 			<Body>
-				<Filters />
-				<OfferList offers={offers}/>
+				<Filters filter={filterByStops} chosenStops={chosenStops} />
+				<OfferList offers={offers} />
 			</Body>
 		);
 	}

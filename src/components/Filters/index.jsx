@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import {StopFilter} from './StopFilter';
 
+/**
+ * Стилезованный компонент Фильтров
+ */
 const StyledFilters = styled.div`
 	width: 232px;
 	height: 331px;
@@ -12,9 +15,16 @@ const StyledFilters = styled.div`
 	box-shadow: 0px 0px 10px 0px rgba(160,205,237,0.2);
 `;
 
-const Filters = () => (
+/**
+ * Возвращает все фильтры поиска билетов
+ * @param {Function} filter Action creator фильтрации перелетов по количеству остановок
+ * @param {Object[]} chosenStops количество перелетов
+ * @returns {JSX}
+ * @constructor
+ */
+const Filters = ({filter, chosenStops}) => (
 	<StyledFilters>
-		<StopFilter />
+		{chosenStops ? <StopFilter filterByStops={filter} chosenStops={chosenStops}/> : null}
 	</StyledFilters>
 );
 

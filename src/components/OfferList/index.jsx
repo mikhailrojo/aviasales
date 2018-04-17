@@ -3,14 +3,33 @@ import styled from 'styled-components'
 
 import {Offer} from '..';
 
+/**
+ * Стилезованная компонента Списка предложений
+ */
 const StyledOfferList = styled.div`
 	margin: 0 0 20px 20px;
 	width: 566px;
 `;
-const OfferList = ({offers}) => (
-	<StyledOfferList>
-		{offers ? offers.map((detail, index) => <Offer {...detail} key={index} />) : 'Данные грузятся'}
-	</StyledOfferList>
-);
+
+/**
+ * Компонент для оборажения либо списка предложений
+ * либо ошибок, либо лоудер
+ * @param {Object[]} offers списки предложений перелетов
+ * @returns {JSX}
+ * @constructor
+ */
+const OfferList = ({offers}) => {
+	const offersInfo = !offers
+		? 'Данные грузятся...'
+		: !offers.length
+			? 'Ничего не найдено'
+			: offers.map((detail, index) => <Offer {...detail} key={index} />);
+
+	return (
+		<StyledOfferList>
+			{offersInfo}
+		</StyledOfferList>
+	);
+};
 
 export {OfferList};
