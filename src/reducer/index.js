@@ -51,6 +51,9 @@ export const reducer = (state = {}, action) => {
 
 			return {...state, chosenStops: [...chosenStops], visibleOffers};
 		}
+		case ActionTypes.CHANGE_CURRENCY: {
+			return {...state, selectedCurrency: action.payload};
+		}
 		default: {
 			return state;
 		}

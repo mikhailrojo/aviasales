@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import {StopFilter} from './StopFilter';
+import {CurrencyFilter} from './CurrencyFilter';
 
 /**
  * Стилезованный компонент Фильтров
@@ -22,8 +23,9 @@ const StyledFilters = styled.div`
  * @returns {JSX}
  * @constructor
  */
-const Filters = ({filter, chosenStops}) => (
+const Filters = ({filter, chosenStops, changeCurrency, selectedCurrency}) => (
 	<StyledFilters>
+		<CurrencyFilter changeCurrency={changeCurrency} selectedCurrency={selectedCurrency} />
 		{chosenStops ? <StopFilter filterByStops={filter} chosenStops={chosenStops}/> : null}
 	</StyledFilters>
 );

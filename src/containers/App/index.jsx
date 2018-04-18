@@ -22,7 +22,11 @@ const Body = styled.div`
 	display: flex;
 `;
 
-const mapStateToProps = ({visibleOffers, chosenStops}) => ({offers: visibleOffers, chosenStops});
+const mapStateToProps = ({visibleOffers, chosenStops, selectedCurrency}) => ({
+	offers: visibleOffers,
+	chosenStops,
+	selectedCurrency
+});
 const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
 
 /**
@@ -40,13 +44,24 @@ class AppContainer extends Component {
 	}
 
 	render() {
+		const {
+			offers,
+			filterByStops,
+			chosenStops,
+			selectedCurrency,
+			changeCurrency
+		} = this.props;
 		console.log(this.props);
-		const {offers, filterByStops, chosenStops} = this.props;
 
 		return (
 			<Body>
-				<Filters filter={filterByStops} chosenStops={chosenStops} />
-				<OfferList offers={offers} />
+			<Filters
+				filter={filterByStops}
+				chosenStops={chosenStops}
+				changeCurrency={changeCurrency}
+				selectedCurrency={selectedCurrency}
+			/>
+			<OfferList offers={offers}/>
 			</Body>
 		);
 	}

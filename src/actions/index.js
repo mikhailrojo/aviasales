@@ -7,6 +7,11 @@ const showError = () => ({
 	type: ActionTypes.SHOW_ERROR
 });
 
+export const changeCurrency = (chosenCurrency) => ({
+	type: ActionTypes.CHANGE_CURRENCY,
+	payload: chosenCurrency
+});
+
 /**
  *  Показывает предложения по перелетам
  * @param offers
