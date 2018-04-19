@@ -36,8 +36,8 @@
 Во-первых, нет такого селектора, а во-вторых предыдущий див находится не рядом, а через `<input>` от него.
 
 Долго работая на стайлингом border'ов - наконец получилось договориться с css - получилось так:
-![общий вид](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/pixel0.png "Общий вид")
-![близкий вид](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/pixel.png "Близкий вид")
+![достойно - 1](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/almost1.png "Достойный вид - 1")
+![достойно - 2](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/almost2.png "Достойный вид - 2")
 
 Ссылка на [код](https://jsbin.com/texohobebi/edit?css,output)
 
@@ -49,11 +49,14 @@
 
 Получилось достойно - но как видно - опять получилось - рамочка - с выпадающим пикселем. Теперь пиксель выпадал не внутри, а снаружи.
 
+![общий вид](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/pixel0.png "Общий вид")
+![близкий вид](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/pixel.png "Близкий вид")
+
 Соответственно - последний вариант, который мог подойти - это сделать рамки на псевдо элементах `:before`.
 Помучившись с ними некоторое время - мне кажется результат удовлетворительным. Понятно что при расширении кол-ва вариантов валют -
 его придется пересматривать - тем не менее в текущем исполнении - он мне представляется  pixel-perfect.
 
-Кроме того - если валюты 3 - то кажется - логичным использовать такую радио-кнопку, если же их больше - то кажется симантичней
+Кроме того - если валюты 3 - то кажется - логичным использовать такую радио-кнопку, если же их больше - то кажется семантичней
 и симпатичней - использовать селект (как сейчас это делается на aviasales.ru).
 
 ![финальный вид](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/final.png "Финальный вид")
