@@ -2,29 +2,51 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 
-const RadioSection = styled.span`
+const RadioSection = styled.div`
 	border: 1px solid #c8cbcd;
 	flex-basis: 100%;
 	font-size: 14px;
 	text-align: center;
 	color: #2d81f0;
+	position: relative;
 	
 	&:first-of-type {
 		border-radius: 5px 0 0 5px;
 	}
 	
-	&:nth-of-type(2) {
+	&:not(:first-of-type) {
 		border-left: none;
-		border-right: none;
+	}
+	
+	&:not(:last-of-type) {
+		border-right:none;
 	}
 	
 	&:last-child {
 		border-radius: 0 5px 5px 0;
 	}
 	
+	&:not(:first-of-type):before {
+		content: '';
+		display: block;
+		width: 1px;
+		height: calc(100% + 2px);
+		background-color: #c8cbcd;
+		position: absolute;
+		left: 0;
+		top: -1px;
+	}
+	
+	&:hover:before,
+	&:hover ~ div:nth-of-type(-n + 2):before,
+	&:nth-of-type(2):hover ~ div:before {
+		background-color: #2d81f0;
+	}
+	
+	
 	&:hover {
 		color: #2d81f0;
-		border: 1px solid #2d81f0;
+		border-color: #2d81f0;
 	}
 	
 	& label {
@@ -37,20 +59,7 @@ const RadioSection = styled.span`
  */
 const FilterBody = styled.div`
 	display: flex;
-	
-	${RadioSection}:nth-of-type(2):hover ~${RadioSection} {
-		border-left: none;
-	}
-	&:hover {		
-		& ${RadioSection}:not(:hover) {
-			:first-of-type  {
-				border-right: none;
-			}
-			:nth-of-type(2) {
-				border-left: 1px solid #ccc;
-			}
-		 }
-	 }
+	position: relative;
 `;
 
 /**
@@ -63,9 +72,13 @@ const StyledStopFilter = styled.div`
 		border-color: #2d81f0;
 		background: #2d81f0;
 		color: white;
+		
+		&:before,
+		& ~ div:nth-of-type(-n + 2):before,
+		&:nth-of-type(2) ~ div:before {
+			background-color: #2d81f0;
+		}
 	}
-	
-
 `;
 
 /**
@@ -111,7 +124,7 @@ export class CurrencyFilter extends React.PureComponent {
 						name='currency'
 						value='RUB'
 						type='radio'
-						checked={isUsd}
+						checked={isRub}
 						onChange={this.onCurrencyChange}
 					/>
 					<RadioSection>
