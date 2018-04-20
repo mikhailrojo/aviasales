@@ -23,9 +23,9 @@ const StyledFilters = styled.div`
  * @returns {JSX}
  * @constructor
  */
-const Filters = ({filter, chosenStops, changeCurrency, selectedCurrency}) => (
+const Filters = ({filter, chosenStops, changeCurrency, selectedCurrency, currencyRates}) => (
 	<StyledFilters>
-		<CurrencyFilter changeCurrency={changeCurrency} selectedCurrency={selectedCurrency} />
+		{currencyRates && <CurrencyFilter changeCurrency={changeCurrency} selectedCurrency={selectedCurrency} />}
 		{chosenStops ? <StopFilter filterByStops={filter} chosenStops={chosenStops}/> : null}
 	</StyledFilters>
 );

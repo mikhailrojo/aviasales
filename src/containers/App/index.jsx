@@ -22,10 +22,11 @@ const Body = styled.div`
 	display: flex;
 `;
 
-const mapStateToProps = ({visibleOffers, chosenStops, selectedCurrency}) => ({
+const mapStateToProps = ({visibleOffers, chosenStops, selectedCurrency, currencyRates}) => ({
 	offers: visibleOffers,
 	chosenStops,
-	selectedCurrency
+	selectedCurrency,
+	currencyRates
 });
 const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
 
@@ -49,9 +50,9 @@ class AppContainer extends Component {
 			filterByStops,
 			chosenStops,
 			selectedCurrency,
-			changeCurrency
+			changeCurrency,
+			currencyRates
 		} = this.props;
-		console.log(this.props);
 
 		return (
 			<Body>
@@ -60,8 +61,9 @@ class AppContainer extends Component {
 				chosenStops={chosenStops}
 				changeCurrency={changeCurrency}
 				selectedCurrency={selectedCurrency}
+				currencyRates={currencyRates}
 			/>
-			<OfferList offers={offers}/>
+			<OfferList offers={offers} currency={selectedCurrency} />
 			</Body>
 		);
 	}

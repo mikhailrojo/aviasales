@@ -21,9 +21,9 @@ const StyledContainer = styled.div`
  * @param rest {Object} остальные детали перелета
  * @constructor
  */
-const Offer = ({price, carrier, ...rest}) => (
+const Offer = ({price, carrier, currency, ...rest}) => (
 	<StyledContainer>
-		<LeftOfferPart price={price} carrier={carrier} />
+		<LeftOfferPart price={price} carrier={carrier} currency={currency} />
 		<RightOfferPart {...rest} />
 	</StyledContainer>
 );

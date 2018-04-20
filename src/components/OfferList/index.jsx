@@ -18,12 +18,12 @@ const StyledOfferList = styled.div`
  * @returns {JSX}
  * @constructor
  */
-const OfferList = ({offers}) => {
+const OfferList = ({offers, currency}) => {
 	const offersInfo = !offers
 		? 'Данные грузятся...'
 		: !offers.length
 			? 'Ничего не найдено'
-			: offers.map((detail, index) => <Offer {...detail} key={index} />);
+			: offers.map((detail, index) => <Offer {...detail} key={index}  currency={currency} />);
 
 	return (
 		<StyledOfferList>

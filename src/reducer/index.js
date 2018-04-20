@@ -1,4 +1,26 @@
-import ActionTypes from '../constants';
+import {ActionTypes} from '../constants';
+import {
+	getCurrentVisibleOffers,
+	getChosenStops
+} from './helpers';
+
+/**
+ * Первоначальный объект состояния
+ * @type {{selectedCurrency: string, chosenStops: Boolean[]}}
+ */
+const initialState = {
+	/**
+	 * Первоначальные цены получаем в рублях
+	 * поэтому можно зафиксировать первоначально-выбранную валюту
+	 */
+	selectedCurrency: 'RUB',
+	/**
+	 * Массив с состояниями чекбоксов по кол-ву перелетов
+	 * @todo сделать побитовой маской?
+	 * круто было бы сделать динамической
+	 */
+	chosenStops: [true, true, true, true, true]
+};
 
 /**
  * Главный редьюсер
@@ -6,7 +28,7 @@ import ActionTypes from '../constants';
  * @param {Object} action экшен
  * @returns {Object} возвращает новый стейт
  */
-export const reducer = (state = {}, action) => {
+export const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ActionTypes.SHOW_ERROR: {
 			return state;
@@ -29,30 +51,24 @@ export const reducer = (state = {}, action) => {
 			};
 		}
 		case ActionTypes.FILTER_STOPS: {
-
-			const {value, checked, onlyThisOption} = action.payload;
-			const {allOffers, chosenStops = []} = state;
-
-			if (onlyThisOption && value !== 'all') {
-				chosenStops.fill(false);
-				chosenStops[value] = true;
-				const visibleOffers = allOffers.filter(offer => chosenStops[offer.stops]);
-
-				return {...state, chosenStops: [...chosenStops], visibleOffers};
-			}
-
-			if (value === 'all') {
-				chosenStops.fill(checked);
-
-				return {...state, chosenStops: [...chosenStops], visibleOffers: checked ? allOffers : []}
-			}
-			chosenStops[value] = checked;
-			const visibleOffers = allOffers.filter(offer => chosenStops[offer.stops]);
+			const {allOffers, chosenStops: oldChosenStops, currencyRates = {}, selectedCurrency} = state;
+			const chosenStops = getChosenStops(oldChosenStops, action.payload);
+			const exchangeRate = currencyRates[selectedCurrency];
+			const visibleOffers = getCurrentVisibleOffers(allOffers, chosenStops, exchangeRate);
 
 			return {...state, chosenStops: [...chosenStops], visibleOffers};
 		}
 		case ActionTypes.CHANGE_CURRENCY: {
-			return {...state, selectedCurrency: action.payload};
+			const selectedCurrency = action.payload;
+			const {currencyRates, chosenStops, allOffers} = state;
+			const selectedCurrencyRate = currencyRates[selectedCurrency];
+
+			const visibleOffers = getCurrentVisibleOffers(allOffers, chosenStops, selectedCurrencyRate);
+
+			return {...state, selectedCurrency, visibleOffers};
+		}
+		case ActionTypes.SET_CURRENCY_RATE: {
+			return {...state, currencyRates: action.payload};
 		}
 		default: {
 			return state;

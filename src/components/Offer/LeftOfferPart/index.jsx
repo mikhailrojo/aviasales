@@ -28,6 +28,7 @@ const BuyButton = styled.button`
 	height: 57px;
 	line-height: 17px;
 	margin-top: 20px
+	outline: none;
 	transition: all 0.3s;
 	width: 160px;
 
@@ -47,15 +48,22 @@ const Logo = styled.div`
 	width: 160px;
 `;
 
+const CURRENCY_MAP = {
+	RUB: '\u20BD',
+	USD: '\u0024',
+	EUR: '\u20AC'
+};
+
 /**
  * Левая часть предложения о перевозки
  * с логотипом перевозчика и ценой билета
  * @param price {Number} цена
  * @param carrier {String} аббревиатура перевозчика
+ * @param currency {'USD'|'EUR'|'RUB'} выбранная валюта
  * @returns {JSX}
  * @constructor
  */
-const LeftOfferPart = ({price, carrier}) => {
+const LeftOfferPart = ({price, carrier, currency}) => {
 	return (
 		<StyledLeftOfferPart >
 			<Logo url={iconUrls[carrier]} />
@@ -64,12 +72,12 @@ const LeftOfferPart = ({price, carrier}) => {
 					Купить
 				</div>
 				<div>
-					{`за ${price} \u20BD`}
+					{`за ${price} ${CURRENCY_MAP[currency]}`}
 				</div>
 			</BuyButton>
 		</StyledLeftOfferPart>
 	);
-}
+};
 
 
 export {LeftOfferPart};
