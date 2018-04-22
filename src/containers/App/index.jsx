@@ -43,7 +43,7 @@ class AppContainer extends Component {
 	 * Адрес получения предложений по билетам
 	 * @type {string}
 	 */
-	apiUrl = '/api/getOffers';
+	apiUrl = 'api/getOffers';
 
 	componentDidMount() {
 		this.props.fetchOffers(this.apiUrl);
