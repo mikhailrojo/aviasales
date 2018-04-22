@@ -11,7 +11,7 @@ moment.locale('fr');
  * Константа с размером текста маленького размера
  * @type {string}
  */
-const SMALL_FONT = '10px';
+const SMALL_FONT = '11px';
 
 /**
  * Константа с цветом светло цвета
@@ -39,9 +39,10 @@ const StyledRightOfferPart = styled.div`
  * Блок с временем
  */
 const Time = styled.div`
-	font-size: 25px;
-	line-height: 25px;
 	color: ${DARK_COLOR};
+	font-size: 27px;
+	line-height: 27px;
+	margin-bottom: 10px;
 `;
 
 /**
@@ -50,7 +51,7 @@ const Time = styled.div`
 const City = styled.div`
 	color: ${DARK_COLOR};
 	font-size: ${SMALL_FONT};
-	line-height: 15px;
+	line-height: 20px;
 `;
 
 /**

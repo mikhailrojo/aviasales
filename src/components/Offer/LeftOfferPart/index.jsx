@@ -23,7 +23,7 @@ const BuyButton = styled.button`
 	background-color: #d64d08;
 	border: 0;
 	color: #fff;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 100;
 	height: 57px;
 	line-height: 17px;

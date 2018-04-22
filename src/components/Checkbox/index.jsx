@@ -19,6 +19,7 @@ const Box = styled.div`
  * Лейбл(текст рядом с чекбоксом)
  */
 const Label = styled.span`
+	color: #393939;
 	display: inline-flex;
 	font-size: 13px;
 	line-height: 21px;

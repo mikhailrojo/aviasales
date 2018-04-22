@@ -10,6 +10,7 @@ const Header = styled.div`
 	color: #393939;
 	font-size: 13px;
 	margin-bottom: 20px;
+	text-align: left;
 	text-transform: uppercase;
 `;
 
