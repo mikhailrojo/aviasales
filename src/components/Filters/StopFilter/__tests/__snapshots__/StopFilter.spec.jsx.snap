@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render StopFilter with only last option selected 1`] = `
+<styled.div>
+  <styled.div>
+    Количество пересадок
+  </styled.div>
+  <Checkbox
+    checked={false}
+    label="Все"
+    onChange={[Function]}
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+    value="all"
+  />
+  <Checkbox
+    checked={false}
+    label="Без пересадок"
+    onChange={[Function]}
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+    value="0"
+  />
+  <Checkbox
+    checked={false}
+    label="1 пересадка"
+    onChange={[Function]}
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+    value="1"
+  />
+  <Checkbox
+    checked={false}
+    label="2 пересадки"
+    onChange={[Function]}
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+    value="2"
+  />
+  <Checkbox
+    checked={true}
+    label="3 пересадки"
+    onChange={[Function]}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+    value="3"
+  />
+</styled.div>
+`;

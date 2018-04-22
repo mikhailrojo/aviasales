@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render CurrencyFilter with selected RUB 1`] = `
+<styled.div>
+  <styled.div>
+    Валюта
+  </styled.div>
+  <styled.div>
+    <input
+      checked={true}
+      id="rubCurrency"
+      name="currency"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="radio"
+      value="RUB"
+    />
+    <styled.div>
+      <label
+        htmlFor="rubCurrency"
+      >
+        RUB
+      </label>
+    </styled.div>
+    <input
+      checked={false}
+      id="usdCurrency"
+      name="currency"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="radio"
+      value="USD"
+    />
+    <styled.div>
+      <label
+        htmlFor="usdCurrency"
+      >
+        USD
+      </label>
+    </styled.div>
+    <input
+      checked={false}
+      id="eurCurrency"
+      name="currency"
+      onChange={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+      type="radio"
+      value="EUR"
+    />
+    <styled.div>
+      <label
+        htmlFor="eurCurrency"
+      >
+        EUR
+      </label>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

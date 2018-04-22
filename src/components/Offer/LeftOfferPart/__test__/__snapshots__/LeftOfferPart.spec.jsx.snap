@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render LeftOfferPart with the offer price, currency and carrier 1`] = `
+<styled.div>
+  <styled.div
+    url="SU.jpg"
+  />
+  <styled.button>
+    <div>
+      Купить
+    </div>
+    <div>
+      за 12000 ₽
+    </div>
+  </styled.button>
+</styled.div>
+`;

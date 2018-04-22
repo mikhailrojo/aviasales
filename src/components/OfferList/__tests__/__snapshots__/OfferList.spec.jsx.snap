@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render OfferList with 1 offer 1`] = `
+<styled.div>
+  <Offer
+    arrival_date="12.05.18"
+    arrival_time="22:10"
+    carrier="TK"
+    currency="RUB"
+    departure_date="12.05.18"
+    departure_time="16:20"
+    destination="TLV"
+    destination_name="Тель-Авив"
+    origin="VVO"
+    origin_name="Владивосток"
+    price={12400}
+    stops={3}
+  />
+</styled.div>
+`;
+
+exports[`Snapshot render OfferList with empty offers 1`] = `
+<styled.div>
+  <NotFound />
+</styled.div>
+`;
+
+exports[`Snapshot render OfferList with no offers 1`] = `
+<styled.div>
+  <styled.div />
+</styled.div>
+`;

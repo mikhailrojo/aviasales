@@ -64,7 +64,7 @@ class AppContainer extends Component {
 				<Logo />
 				<Body>
 				<Filters
-					filter={filterByStops}
+					filterByStops={filterByStops}
 					chosenStops={chosenStops}
 					changeCurrency={changeCurrency}
 					selectedCurrency={selectedCurrency}

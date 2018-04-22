@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render RightOfferPart with 1 offer 1`] = `
+<styled.div>
+  <div>
+    <styled.div>
+      16:20
+    </styled.div>
+    <styled.div>
+      VVO Владивосток
+    </styled.div>
+    <styled.div>
+      12 mai 2018, Sam.
+    </styled.div>
+  </div>
+  <styled.div>
+    3 пересадки
+    <styled.div>
+      <styled.div />
+      <styled.div />
+    </styled.div>
+  </styled.div>
+  <div>
+    <styled.div>
+      22:10
+    </styled.div>
+    <styled.div>
+      Тель-Авив TLV
+    </styled.div>
+    <styled.div>
+      12 mai 2018, Sam.
+    </styled.div>
+  </div>
+</styled.div>
+`;

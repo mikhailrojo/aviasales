@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render Checkbox 1`] = `
+<styled.div>
+  <label>
+    <styled.span>
+      <input
+        checked={true}
+        onChange={[Function]}
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+        type="checkbox"
+        value="0"
+      />
+      <styled.div />
+      без пересадок
+    </styled.span>
+  </label>
+  <styled.span
+    data-id="0"
+    onClick={[Function]}
+  >
+    только
+  </styled.span>
+</styled.div>
+`;

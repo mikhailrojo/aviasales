@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render NotFound 1`] = `
+<div>
+  <styled.div />
+  <p>
+    К сожалению ничего не было найдено
+  </p>
+</div>
+`;

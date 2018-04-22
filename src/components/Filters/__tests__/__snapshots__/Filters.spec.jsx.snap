@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render Filters with all options 1`] = `
+<styled.div>
+  <CurrencyFilter
+    changeCurrency={[Function]}
+    selectedCurrency="RUB"
+  />
+  <StopFilter
+    chosenStops={
+      Array [
+        false,
+        false,
+        false,
+        true,
+      ]
+    }
+    filterByStops={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`Snapshot render Filters with no chosenStops 1`] = `
+<styled.div>
+  
+</styled.div>
+`;
+
+exports[`Snapshot render Filters with no currencyRates 1`] = `
+<styled.div>
+  <StopFilter
+    chosenStops={
+      Array [
+        false,
+        false,
+        false,
+        true,
+      ]
+    }
+    filterByStops={[Function]}
+  />
+</styled.div>
+`;

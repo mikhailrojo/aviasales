@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot render Offer with offer details 1`] = `
+<styled.div>
+  <LeftOfferPart
+    carrier="TK"
+    currency="RUB"
+    price={12400}
+  />
+  <RightOfferPart
+    arrival_date="12.05.18"
+    arrival_time="22:10"
+    departure_date="12.05.18"
+    departure_time="16:20"
+    destination="TLV"
+    destination_name="Тель-Авив"
+    origin="VVO"
+    origin_name="Владивосток"
+    stops={3}
+  />
+</styled.div>
+`;
