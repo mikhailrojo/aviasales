@@ -102,11 +102,7 @@ export class CurrencyFilter extends React.PureComponent {
 	};
 
 	render() {
-		const {
-			selectedCurrency = 'RUB',
-			changeCurrency
-		} = this.props;
-		console.log(this.props);
+		const {selectedCurrency} = this.props;
 
 		const isRub = selectedCurrency === 'RUB';
 		const isUsd= selectedCurrency === 'USD';

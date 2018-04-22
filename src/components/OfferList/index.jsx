@@ -1,13 +1,14 @@
 import * as React from 'react';
 import styled from 'styled-components'
 
-import {Offer} from '..';
+import {Offer, Spinner, NotFound} from '..';
 
 /**
  * Стилезованная компонента Списка предложений
  */
 const StyledOfferList = styled.div`
 	margin: 0 0 20px 20px;
+	text-align: center;
 	width: 566px;
 `;
 
@@ -20,9 +21,9 @@ const StyledOfferList = styled.div`
  */
 const OfferList = ({offers, currency}) => {
 	const offersInfo = !offers
-		? 'Данные грузятся...'
+		? <Spinner />
 		: !offers.length
-			? 'Ничего не найдено'
+			? <NotFound />
 			: offers.map((detail, index) => <Offer {...detail} key={index}  currency={currency} />);
 
 	return (
