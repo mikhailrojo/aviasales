@@ -1,6 +1,6 @@
 # Aviasales app #
 
-![Задание](https://github.com/KosyanMedia/test-tasks/tree/master/aviasales) сверстать упрощенную страницу Aviasales и
+[Задание](https://github.com/KosyanMedia/test-tasks/tree/master/aviasales) сверстать упрощенную страницу Aviasales и
 реализовать основной функционал отложенной загрузки предложений авиабилетов, фильтрации по кол-ву пересадок и изменения
 цены билета в выбранной валюте.
 
