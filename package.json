@@ -1,5 +1,6 @@
 {
   "name": "aviasales",
+  "homepage": "http://pandaslon.ru/aviasales/",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
