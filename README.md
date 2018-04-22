@@ -1,5 +1,21 @@
 # Aviasales app #
 
+![Задание](https://github.com/KosyanMedia/test-tasks/tree/master/aviasales) сверстать упрощенную страницу Aviasales и
+реализовать основной функционал отложенной загрузки предложений авиабилетов, фильтрации по кол-ву пересадок и изменения
+цены билета в выбранной валюте.
+
+Как должно было выглядеть:
+![макет](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/how-to.png "Как должно выглядеть")
+
+Как получилось:
+![получилось](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/final-draft.png "Как получилось")
+
+От себя добавил простую анимацию на спиннер:
+![спиннер](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/spinner.png "Как получилось")
+
+и иконку на ничего не найдено:
+![ничего не найдено](https://github.com/mikhailrojo/aviasales/blob/master/README.assets/nothing-found.png "Как получилось")
+
 ### Самая большая трудность (что заняло больше всего времени) ###
 
 Самое большое время заняло рисование блочка выбора валюты - pixel-perfect на css.

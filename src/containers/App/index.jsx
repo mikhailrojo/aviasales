@@ -3,7 +3,7 @@ import {injectGlobal, default as styled} from 'styled-components';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import {Filters, OfferList} from '../../components';
+import {Filters, OfferList, Logo} from '../../components';
 import * as actions from '../../actions'
 
 injectGlobal`
@@ -20,6 +20,11 @@ injectGlobal`
 
 const Body = styled.div`
 	display: flex;
+	margin-top: 20px;
+`;
+
+const Layout = styled.div`
+	text-align: center;
 `;
 
 const mapStateToProps = ({visibleOffers, chosenStops, selectedCurrency, currencyRates}) => ({
@@ -55,16 +60,19 @@ class AppContainer extends Component {
 		} = this.props;
 
 		return (
-			<Body>
-			<Filters
-				filter={filterByStops}
-				chosenStops={chosenStops}
-				changeCurrency={changeCurrency}
-				selectedCurrency={selectedCurrency}
-				currencyRates={currencyRates}
-			/>
-			<OfferList offers={offers} currency={selectedCurrency} />
-			</Body>
+			<Layout>
+				<Logo />
+				<Body>
+				<Filters
+					filter={filterByStops}
+					chosenStops={chosenStops}
+					changeCurrency={changeCurrency}
+					selectedCurrency={selectedCurrency}
+					currencyRates={currencyRates}
+				/>
+				<OfferList offers={offers} currency={selectedCurrency}/>
+				</Body>
+			</Layout>
 		);
 	}
 }

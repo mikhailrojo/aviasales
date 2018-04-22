@@ -7,7 +7,7 @@ import {RUB_TO_RUB_EXCHANGE_RATE} from '../constants';
  * @param chosenStops
  * @param selectedCurrencyRate
  */
-const getCurrentVisibleOffers = (allOffers, chosenStops, selectedCurrencyRate = RUB_TO_RUB_EXCHANGE_RATE) => {
+const getCurrentVisibleOffers = (allOffers = [], chosenStops, selectedCurrencyRate = RUB_TO_RUB_EXCHANGE_RATE) => {
 	const filteredOffers = allOffers.filter(offer => chosenStops[offer.stops]);
 
 	return filteredOffers.map(offer => {

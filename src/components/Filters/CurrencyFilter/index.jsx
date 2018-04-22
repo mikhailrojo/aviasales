@@ -50,6 +50,7 @@ const RadioSection = styled.div`
 	}
 	
 	& label {
+		cursor: pointer;
 		display: block;
 		padding: 6px 0;
 	}

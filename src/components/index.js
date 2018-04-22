@@ -4,3 +4,4 @@ export {OfferList} from './OfferList/';
 export {Checkbox} from './Checkbox/';
 export {Spinner} from './Spinner/';
 export {NotFound} from './NotFound';
+export {Logo} from './Logo';
