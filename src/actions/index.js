@@ -5,31 +5,36 @@ import {
 } from '../constants';
 
 /**
- * Пока не используется
+ * Меняет выбранную валюту предложений авиабилетов
+ * @param {String} chosenCurrency
  */
-const showError = () => ({
-	type: ActionTypes.SHOW_ERROR
-});
-
 export const changeCurrency = chosenCurrency => ({
 	type: ActionTypes.CHANGE_CURRENCY,
 	payload: chosenCurrency
 });
 
 /**
- *  Показывает предложения по перелетам
- * @param offers
+ * Показывает предложения по перелетам
+ * @param {Object[]} offers
  */
 const showOffers = offers => ({
 	type: ActionTypes.SHOW_OFFERS,
 	payload: offers
 });
 
+/**
+ * Устанавливает в стор текущие курсы валют
+ * @param {Object} currencies
+ */
 const setCurrencyRates = currencies => ({
 	type: ActionTypes.SET_CURRENCY_RATE,
 	payload: currencies
 });
 
+/**
+ * Делает запрос к API c текущим курсом валют
+ * @returns {Thunk}
+ */
 const fetchExchangeRates = () => {
 	return async (dispatch) => {
 		try {

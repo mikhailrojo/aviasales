@@ -107,6 +107,11 @@ const ThroughSection = styled.div`
  * с детальной информацией о полете
  */
 class RightOfferPart extends React.PureComponent {
+	/**
+	 * Отдает строку с числом и датой согласно макетам
+	 * @param {String} date дата перелета
+	 * @returns {string}
+	 */
 	getFormattedDate(date) {
 		const momentDate = moment(date, 'DD.MM.YY');
 		const dateWithoutWeek = momentDate.format('D MMM YYYY');
@@ -116,6 +121,12 @@ class RightOfferPart extends React.PureComponent {
 		return `${dateWithoutWeek}, ${capitalizedWeekDay}`;
 	}
 
+	/**
+	 * Отдает строку с числом пересадок
+	 * в засимости от их кол-ва
+	 * @param {Number} numberOfStops кол-во пересадок
+	 * @returns {*}
+	 */
 	getPluralOfStops(numberOfStops) {
 		switch (numberOfStops) {
 			case 0: {
@@ -134,7 +145,6 @@ class RightOfferPart extends React.PureComponent {
 			}
 		}
 	}
-
 
 	render() {
 		const {

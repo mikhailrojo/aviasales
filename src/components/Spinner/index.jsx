@@ -1,5 +1,8 @@
 import styled, {keyframes} from 'styled-components';
 
+/**
+ * Анимация вращения
+ */
 const spinAnimation = keyframes`
 	to {
 		transform: rotate(360deg);

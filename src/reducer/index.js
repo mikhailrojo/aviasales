@@ -16,8 +16,6 @@ const initialState = {
 	selectedCurrency: 'RUB',
 	/**
 	 * Массив с состояниями чекбоксов по кол-ву перелетов
-	 * @todo сделать побитовой маской?
-	 * круто было бы сделать динамической
 	 */
 	chosenStops: [true, true, true, true, true]
 };

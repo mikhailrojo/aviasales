@@ -6,6 +6,9 @@ import {bindActionCreators} from 'redux';
 import {Filters, OfferList, Logo} from '../../components';
 import * as actions from '../../actions'
 
+/**
+ * Инжектим основные глобальные стили
+ */
 injectGlobal`
 	body {
 		margin: 0;
@@ -18,21 +21,34 @@ injectGlobal`
 	}
 `;
 
+/**
+ * Общие стили верстки приложения
+ */
+const Layout = styled.div`
+	text-align: center;
+`;
+
+/**
+ * Тело приложения
+ */
 const Body = styled.div`
 	display: flex;
 	margin-top: 20px;
 `;
 
-const Layout = styled.div`
-	text-align: center;
-`;
-
+/**
+ * Мапит стайте к пропсам
+ */
 const mapStateToProps = ({visibleOffers, chosenStops, selectedCurrency, currencyRates}) => ({
 	offers: visibleOffers,
 	chosenStops,
 	selectedCurrency,
 	currencyRates
 });
+
+/**
+ * Мапит диспатч к пропсам
+ */
 const mapDispatchToProps = (dispatch) => bindActionCreators(actions, dispatch);
 
 /**

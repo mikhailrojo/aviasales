@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import sadFace from './assets/sad-face.svg';
 
+/**
+ * Блок иконки с грусными лицом
+ */
 const SadFaceIcon = styled.div`
 	display: inline-block;
 	height: 50px;
@@ -11,6 +14,10 @@ const SadFaceIcon = styled.div`
 	background: url(${sadFace});
 `;
 
+/**
+ * Блок с информацией о том что ничего не найдено
+ * @constructor
+ */
 const NotFound = () => (
 	<div>
 		<SadFaceIcon/>
