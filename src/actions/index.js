@@ -5,6 +5,13 @@ import {
 } from '../constants';
 
 /**
+ * Пока не используется
+ */
+const showError = () => ({
+	type: ActionTypes.SHOW_ERROR
+});
+
+/**
  * Меняет выбранную валюту предложений авиабилетов
  * @param {String} chosenCurrency
  */
