@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 import {Offer, Spinner, NotFound} from '..';
 
@@ -24,7 +24,7 @@ const OfferList = ({offers, currency}) => {
 		? <Spinner />
 		: !offers.length
 			? <NotFound />
-			: offers.map((detail, index) => <Offer {...detail} key={index}  currency={currency} />);
+			: offers.map((detail, index) => <Offer {...detail} key={index} currency={currency} />);
 
 	return (
 		<StyledOfferList>

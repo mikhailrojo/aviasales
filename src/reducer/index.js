@@ -38,20 +38,25 @@ export const reducer = (state = initialState, action) => {
 			const allOffers = action.payload;
 			if (!chosenStops.length) {
 				chosenStops[0] = false;
-				allOffers.forEach(offer => {
+				allOffers.forEach((offer) => {
 					chosenStops[offer.stops + 1] = false;
 				});
 			}
 
 			return {
 				...state,
-				allOffers: allOffers,
+				allOffers,
 				visibleOffers: allOffers,
 				chosenStops: [...chosenStops]
 			};
 		}
 		case ActionTypes.FILTER_STOPS: {
-			const {allOffers, chosenStops: oldChosenStops, currencyRates = {}, selectedCurrency} = state;
+			const {
+				allOffers,
+				chosenStops: oldChosenStops,
+				currencyRates = {},
+				selectedCurrency
+			} = state;
 			const chosenStops = getChosenStops(oldChosenStops, action.payload);
 			const exchangeRate = currencyRates[selectedCurrency];
 			const visibleOffers = getCurrentVisibleOffers(allOffers, chosenStops, exchangeRate);

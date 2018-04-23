@@ -9,7 +9,7 @@ describe('Snapshot', () => {
 		const component = renderer.render(
 			<Filters
 				filterByStops={jest.fn()}
-				chosenStops={[false,false,false,true]}
+				chosenStops={[false, false, false, true]}
 				changeCurrency={jest.fn()}
 				selectedCurrency="RUB"
 				currencyRates={{
@@ -26,7 +26,7 @@ describe('Snapshot', () => {
 		const component = renderer.render(
 			<Filters
 				filterByStops={jest.fn()}
-				chosenStops={[false,false,false,true]}
+				chosenStops={[false, false, false, true]}
 				changeCurrency={jest.fn()}
 				selectedCurrency="RUB"
 			/>

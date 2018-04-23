@@ -48,6 +48,11 @@ const Logo = styled.div`
 	width: 160px;
 `;
 
+/**
+ * Словарь с наименованием валюты
+ * и юникод символом этой валюты
+ * @type {{RUB: string, USD: string, EUR: string}}
+ */
 const CURRENCY_MAP = {
 	RUB: '\u20BD',
 	USD: '\u0024',
@@ -63,21 +68,18 @@ const CURRENCY_MAP = {
  * @returns {JSX}
  * @constructor
  */
-const LeftOfferPart = ({price, carrier, currency}) => {
-	return (
-		<StyledLeftOfferPart >
-			<Logo url={iconUrls[carrier]} />
-			<BuyButton>
-				<div>
-					Купить
-				</div>
-				<div>
-					{`за ${price} ${CURRENCY_MAP[currency]}`}
-				</div>
-			</BuyButton>
-		</StyledLeftOfferPart>
-	);
-};
-
+const LeftOfferPart = ({price, carrier, currency}) => (
+	<StyledLeftOfferPart >
+		<Logo url={iconUrls[carrier]} />
+		<BuyButton>
+			<div>
+				Купить
+			</div>
+			<div>
+				{`за ${price} ${CURRENCY_MAP[currency]}`}
+			</div>
+		</BuyButton>
+	</StyledLeftOfferPart>
+);
 
 export {LeftOfferPart};

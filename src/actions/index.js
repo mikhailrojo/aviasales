@@ -11,7 +11,7 @@ const showError = () => ({
 	type: ActionTypes.SHOW_ERROR
 });
 
-export const changeCurrency = (chosenCurrency) => ({
+export const changeCurrency = chosenCurrency => ({
 	type: ActionTypes.CHANGE_CURRENCY,
 	payload: chosenCurrency
 });
@@ -20,12 +20,12 @@ export const changeCurrency = (chosenCurrency) => ({
  *  Показывает предложения по перелетам
  * @param offers
  */
-const showOffers = (offers) => ({
+const showOffers = offers => ({
 	type: ActionTypes.SHOW_OFFERS,
 	payload: offers
 });
 
-const setCurrencyRates = (currencies) => ({
+const setCurrencyRates = currencies => ({
 	type: ActionTypes.SET_CURRENCY_RATE,
 	payload: currencies
 });
@@ -49,9 +49,7 @@ const fetchExchangeRates = () => {
 			 * так как если валюты не загрузяться - то
 			 * фильтр по валютам не отренедерится
 			 */
-			console.log(e);
 		}
-
 	};
 };
 
@@ -60,31 +58,25 @@ const fetchExchangeRates = () => {
  * @param {String} apiUrl адрес для запроса
  * @returns {Thunk}
  */
-export const fetchOffers = (apiUrl) => {
-	return async (dispatch) => {
-		const response = await fetch(apiUrl);
+export const fetchOffers = apiUrl => async (dispatch) => {
+	const response = await fetch(apiUrl);
 
-		if (response.status !== 200) {
-			dispatch(showError());
-		}
-
-		const body = await response.json();
-
-		dispatch(showOffers(body));
-		dispatch(fetchExchangeRates());
+	if (response.status !== 200) {
+		dispatch(showError());
 	}
+
+	const body = await response.json();
+
+	dispatch(showOffers(body));
+	dispatch(fetchExchangeRates());
 };
-
-
 
 /**
  * Фильтрует предложения по количеству пересадо
  * @param stops
- * @returns {{type: string, payload: *}}
+ * @returns {{type: String, payload: String}}
  */
-export const filterByStops = (stops) => {
-	return {
-		type: ActionTypes.FILTER_STOPS,
-		payload: stops
-	}
-};
+export const filterByStops = stops => ({
+	type: ActionTypes.FILTER_STOPS,
+	payload: stops
+});

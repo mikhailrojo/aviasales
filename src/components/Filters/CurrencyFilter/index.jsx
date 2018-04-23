@@ -1,7 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-
+/**
+ * Секция блока с радио-инпутом выбора валюты
+ */
 const RadioSection = styled.div`
 	border: 1px solid #c8cbcd;
 	flex-basis: 100%;
@@ -56,7 +58,7 @@ const RadioSection = styled.div`
 	}
 `;
 /**
- * Надо подумать
+ * Тело фильтра по валютам
  */
 const FilterBody = styled.div`
 	display: flex;
@@ -97,8 +99,16 @@ const Header = styled.div`
  * Фильтр переключения валюты предложений
  */
 export class CurrencyFilter extends React.PureComponent {
+	/**
+	 * Назвавание секции
+	 * @type {string}
+	 */
 	TITLE = 'Валюта';
 
+	/**
+	 * Достает значение радио-инпута и передает в Action creator
+	 * @param {String} value
+	 */
 	onCurrencyChange = ({currentTarget: {value}}) => {
 		this.props.changeCurrency(value);
 	};
@@ -163,4 +173,3 @@ export class CurrencyFilter extends React.PureComponent {
 		);
 	}
 }
-;

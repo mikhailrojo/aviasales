@@ -7,11 +7,15 @@ import {RUB_TO_RUB_EXCHANGE_RATE} from '../constants';
  * @param chosenStops
  * @param selectedCurrencyRate
  */
-const getCurrentVisibleOffers = (allOffers = [], chosenStops, selectedCurrencyRate = RUB_TO_RUB_EXCHANGE_RATE) => {
+const getCurrentVisibleOffers = (
+	allOffers = [],
+	chosenStops,
+	selectedCurrencyRate = RUB_TO_RUB_EXCHANGE_RATE
+) => {
 	const filteredOffers = allOffers.filter(offer => chosenStops[offer.stops]);
 
-	return filteredOffers.map(offer => {
-		const convertedPrice = (offer.price /selectedCurrencyRate);
+	return filteredOffers.map((offer) => {
+		const convertedPrice = (offer.price / selectedCurrencyRate);
 		const price = Number.isInteger(convertedPrice)
 			? convertedPrice
 			: convertedPrice.toFixed(2);
@@ -29,16 +33,18 @@ const getCurrentVisibleOffers = (allOffers = [], chosenStops, selectedCurrencyRa
  */
 const getChosenStops = (chosenStops, payload) => {
 	const {onlyThisOption, value, checked} = payload;
+	const newChosenStops = [...chosenStops];
 
 	if (onlyThisOption && value !== 'all') {
-		chosenStops.fill(false);
-		chosenStops[value] = true;
+		newChosenStops.fill(false);
+		newChosenStops[value] = true;
 	} else if (value === 'all') {
-		chosenStops.fill(checked);
+		newChosenStops.fill(checked);
 	} else {
-		chosenStops[value] = checked;
+		newChosenStops[value] = checked;
 	}
-	return [...chosenStops];
+
+	return newChosenStops;
 };
 
 

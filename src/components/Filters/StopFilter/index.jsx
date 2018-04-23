@@ -79,14 +79,14 @@ export class StopFilter extends React.PureComponent {
 		if (tagName === this.controls.SPAN) {
 			const value = currentTarget.dataset.id;
 			return filterByStops({
-				value: value === 'all' ? 'all' : parseInt(value),
+				value: value === 'all' ? 'all' : parseInt(value, 10),
 				checked: true,
 				onlyThisOption: true
 			});
 		} else  if (tagName === this.controls.INPUT) {
 			const {value, checked} = currentTarget;
 			return filterByStops({
-				value: value === 'all' ? 'all' : parseInt(value),
+				value: value === 'all' ? 'all' : parseInt(value, 10),
 				checked
 			});
 		}
@@ -112,7 +112,7 @@ export class StopFilter extends React.PureComponent {
 					value= {value}
 					onChange={this.onChangeFn}
 					label={label}
-					checked={value === 'all' ? areAllSelected : chosenStops[parseInt(value)] || false}
+					checked={value === 'all' ? areAllSelected : chosenStops[parseInt(value, 10)] || false}
 				/>
 			);
 		});

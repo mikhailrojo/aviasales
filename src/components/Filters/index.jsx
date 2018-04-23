@@ -26,7 +26,7 @@ const StyledFilters = styled.div`
 const Filters = ({filterByStops, chosenStops, changeCurrency, selectedCurrency, currencyRates}) => (
 	<StyledFilters>
 		{currencyRates && <CurrencyFilter changeCurrency={changeCurrency} selectedCurrency={selectedCurrency} />}
-		{chosenStops ? <StopFilter filterByStops={filterByStops} chosenStops={chosenStops}/> : null}
+		{chosenStops ? <StopFilter filterByStops={filterByStops} chosenStops={chosenStops} /> : null}
 	</StyledFilters>
 );
 

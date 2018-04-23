@@ -5,7 +5,7 @@ import 'moment/locale/ru';
 
 import plane from './assets/plane.svg';
 
-moment.locale('fr');
+moment.locale('ru');
 
 /**
  * Константа с размером текста маленького размера
@@ -17,7 +17,7 @@ const SMALL_FONT = '11px';
  * Константа с цветом светло цвета
  * @type {string}
  */
-const LIGHT_COLOR = `rgb(200, 203, 205)`;
+const LIGHT_COLOR = 'rgb(200, 203, 205)';
 
 /**
  * Константа с цветом темного текста
@@ -109,7 +109,7 @@ const ThroughSection = styled.div`
 class RightOfferPart extends React.PureComponent {
 	getFormattedDate(date) {
 		const momentDate = moment(date, 'DD.MM.YY');
-		const dateWithoutWeek = momentDate.format('D MMM YYYY')
+		const dateWithoutWeek = momentDate.format('D MMM YYYY');
 		const weekDay = momentDate.format('ddd');
 		const capitalizedWeekDay = weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
 
@@ -117,7 +117,7 @@ class RightOfferPart extends React.PureComponent {
 	}
 
 	getPluralOfStops(numberOfStops) {
-		switch(numberOfStops){
+		switch (numberOfStops) {
 			case 0: {
 				return 'прямой рейс';
 			}
@@ -163,7 +163,6 @@ class RightOfferPart extends React.PureComponent {
 						<Plane/>
 					</PathAndPlane>
 				</ThroughSection>
-
 				<div>
 					<Time>{arrival_time}</Time>
 					<City>{`${destination_name} ${destination}`}</City>

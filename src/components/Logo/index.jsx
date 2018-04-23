@@ -1,12 +1,12 @@
 import * as React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 
 import logoIcon from './assets/logo.svg';
 
 /**
  * Блок Логотипа в верхней части страницы
  */
-const StyledLogoIcon = styled.div`
+const StyledLogo = styled.div`
 	display: inline-block;
 	height: 60px;
 	margin: 50px 0;
@@ -17,6 +17,11 @@ const StyledLogoIcon = styled.div`
 	box-shadow: 0 5px 12px 3px #ccc;
 `;
 
-const Logo = (props) => <StyledLogoIcon {...props} />;
+/**
+ * Блок Логотипа вверху страницы
+ * @param {Object} props
+ * @constructor
+ */
+const Logo = props => <StyledLogo {...props} />;
 
 export {Logo};

@@ -9,7 +9,7 @@ describe('Snapshot', () => {
 		const component = renderer.render(
 			<StopFilter
 				filterByStops={jest.fn()}
-				chosenStops={[false,false,false,true]}
+				chosenStops={[false, false, false, true]}
 			/>
 		);
 		expect(component).toMatchSnapshot();

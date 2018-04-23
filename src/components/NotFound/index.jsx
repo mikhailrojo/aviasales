@@ -11,14 +11,11 @@ const SadFaceIcon = styled.div`
 	background: url(${sadFace});
 `;
 
-const NotFound = () => {
-	return (
-		<div>
-			<SadFaceIcon/>
-			<p>К сожалению ничего не было найдено</p>
-		</div>
-	)
-};
+const NotFound = () => (
+	<div>
+		<SadFaceIcon/>
+		<p>К сожалению ничего не было найдено</p>
+	</div>
+);
 
 export {NotFound};
-

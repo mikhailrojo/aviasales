@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import {LeftOfferPart} from './LeftOfferPart';
 import {RightOfferPart} from './RightOfferPart';
 
-const StyledContainer = styled.div`
+/**
+ * Стилезованный блок предложения
+ */
+const StyledOffer = styled.div`
 	background: #fff;
 	border-radius: 5px;
 	box-shadow: 0px 0px 10px 0px rgba(160,205,237,0.2);
@@ -22,10 +25,10 @@ const StyledContainer = styled.div`
  * @constructor
  */
 const Offer = ({price, carrier, currency, ...rest}) => (
-	<StyledContainer>
+	<StyledOffer>
 		<LeftOfferPart price={price} carrier={carrier} currency={currency} />
 		<RightOfferPart {...rest} />
-	</StyledContainer>
+	</StyledOffer>
 );
 
 
